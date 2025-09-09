@@ -14,6 +14,9 @@ open http://localhost:3000
 2. Basic vite boilerplate setup
 3. Install concurrently
 4. Config data fetching and RPC
+5. Setup Postgres DB
+6. Setup Drizzle ORM
+7. Seed the DB
 
 Commands
 
@@ -21,4 +24,8 @@ Commands
 bun create hono@latest hono-react-better-auth
 bun create vite
 bun add -D concurrently
+bun run db:up
+bun add drizzle-orm pg dotenv
+bun add -D drizzle-kit tsx @types/pg
+bun add drizzle-seed
 ```
