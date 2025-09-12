@@ -21,6 +21,18 @@ open http://localhost:3000
 9. Daisy UI
 10. Fetch todos with hono RPC
 11. Display todos
+12. Sign Up page
+    Email/password Login
+    Name input
+    Input Validation
+    Confirm Password
+    Better auth client to signup
+    Handle submit logic
+    Redirect to /todos on sign up
+    Redirect to /todos if already sign in
+    Error state
+    Loading state
+    Already have an account ? Link to Sign in
 
 Commands
 

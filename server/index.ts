@@ -1,9 +1,18 @@
 import 'dotenv/config'
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 import { getTodos } from './db/queries'
 import { auth } from './lib/auth';
 
 const app = new Hono().basePath('/api')
+
+// Add CORS middleware
+app.use('/*', cors({
+  origin: [process.env.CLIENT_URL!],
+  allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}))
 
 const router = app
   .on(["POST", "GET"], "/auth/*", (c) => {
