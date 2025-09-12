@@ -4,7 +4,7 @@ import { seed } from 'drizzle-seed';
 
 const seedDb = async () => {
   await seed(db, schema).refine((funcs) => ({
-    todosTable: {
+    todos: {
       columns: {
         title: funcs.valuesFromArray({
           values: ['Buy groceries', 'Read a book', ' Call mom']

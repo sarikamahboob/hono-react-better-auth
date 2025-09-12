@@ -1,12 +1,23 @@
+import 'dotenv/config'
 import { Hono } from 'hono'
+import { getTodos } from './db/queries'
+import { auth } from './lib/auth';
 
-const app = new Hono()
+const app = new Hono().basePath('/api')
 
 const router = app
-  .get('/', (c) => {
-    return c.text('Hello Hono!')
+  .on(["POST", "GET"], "/auth/*", (c) => {
+    return auth.handler(c.req.raw);
   })
-  .get("/api/people", (c) => {
+  .get('/todos', async (c) => {
+    try {
+      const todos = await getTodos()
+      return c.json(todos)
+    } catch (error) {
+      return c.json({ error: 'Failed to fetch todos' }, 500)
+    }
+  })
+  .get("/people", (c) => {
     return c.json([
       { id: 1, name: "John Doe" },
       { id: 2, name: "Jane Doe" },
