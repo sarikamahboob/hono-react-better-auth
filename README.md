@@ -40,6 +40,12 @@ open http://localhost:3000
     Error message using daisy UI alert
     Loading state
     Link to sign up for people who don't have an account
+14. Flip login/logout icon based on users better auth session
+    Clicking logout icon should logout the user using the better auth client signout function
+    Clicking login icon should navigate to the sign in page
+    Show error toast on failed to login/logout
+15. Hono auth middleware
+16. Front end protect todos page
 
 Commands
 
