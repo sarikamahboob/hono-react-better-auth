@@ -1,6 +1,9 @@
 import { boolean, integer, pgTable, timestamp, uuid, varchar, text, } from "drizzle-orm/pg-core";
 
 export const todos = pgTable("todos", {
+  userId: text("user_id")
+    .notNull()
+    .references(() => user.id, { onDelete: "cascade" }),
   id: uuid().primaryKey().defaultRandom(),
   title: varchar({ length: 500 }).notNull(),
   description: varchar({ length: 1000 }),

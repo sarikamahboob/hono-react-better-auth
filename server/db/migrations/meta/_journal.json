@@ -15,6 +15,13 @@
       "when": 1757690306171,
       "tag": "0001_same_shriek",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1757765736890,
+      "tag": "0002_striped_sauron",
+      "breakpoints": true
     }
   ]
 }

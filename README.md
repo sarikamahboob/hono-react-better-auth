@@ -46,6 +46,14 @@ open http://localhost:3000
     Show error toast on failed to login/logout
 15. Hono auth middleware
 16. Front end protect todos page
+17. Server end
+    Update the seed script
+    Update getTodos gquery so that it gets todos by user id
+    Add auth middleware
+    Refactor todos route
+18. Disbaled todos link when logged out
+    Sheild alert icon with tooltip showing "need to login"
+    Add redirect on todos page when not logged in
 
 Commands
 

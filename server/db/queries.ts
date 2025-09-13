@@ -1,13 +1,8 @@
-import { desc } from "drizzle-orm"
+import { desc, eq } from "drizzle-orm"
 import { db } from "./db"
 import { todos } from "./schema"
 
-export const getTodos = async () => {
-    const todoList = await db.select().from(todos).orderBy(desc(todos.createdAt))
+export const getTodosByUserId = async (userId: string) => {
+    const todoList = await db.select().from(todos).where(eq(todos.userId, userId)).orderBy(desc(todos.createdAt))
     return todoList
-}
-
-export const createTodo = async (todo: string) => {
-    const newTodo = await db.insert(todos).values({ title: todo })
-    return newTodo
 }
