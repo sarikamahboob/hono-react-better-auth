@@ -33,6 +33,13 @@ open http://localhost:3000
     Error state
     Loading state
     Already have an account ? Link to Sign in
+13. Sign In page
+    Email/password inputs with daisy UI validation and styling
+    Redirect to /todos if already logged in
+    Redirect to /todos after sign in
+    Error message using daisy UI alert
+    Loading state
+    Link to sign up for people who don't have an account
 
 Commands
 
